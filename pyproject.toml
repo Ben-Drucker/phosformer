@@ -1,0 +1,29 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool]
+hatch.metadata.allow-direct-references = true
+
+[project]
+dependencies = ["numpy", "scipy", "torch", "transformers"]
+name = "Test3Tools"
+version = "0.0.0"
+description = "An installable version of phosformer. (Original here: https://github.com/waylandy/phosformer)"
+authors = [{ name = "Ben Drucker", email = "ben.drucker@pnnl.gov" }]
+readme = "README.md"
+
+[project.optional-dependencies]
+dev = ["pytest", "pytest-cov"]
+
+[tool.hatch.build.targets.sdist]
+include = ["src", "README.md"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/Phosformer"]
+
+[tool.hatch.envs.default]
+dependencies = ["pytest"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
