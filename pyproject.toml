@@ -7,7 +7,7 @@ hatch.metadata.allow-direct-references = true
 
 [project]
 dependencies = ["numpy", "scipy", "torch", "transformers"]
-name = "Test3Tools"
+name = "Phosformer"
 version = "0.0.0"
 description = "An installable version of phosformer. (Original here: https://github.com/waylandy/phosformer)"
 authors = [{ name = "Ben Drucker", email = "ben.drucker@pnnl.gov" }]
