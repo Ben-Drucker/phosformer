@@ -93,7 +93,7 @@ def batch_job(kinases, peptides, model=None, tokenizer=None, input_order='SK', o
                 attention = batch_size * [None]
             
             tokens = [i[j].cpu().numpy() for i, j in zip(input_ids, attention_mask)]
-            pred = softmax(result['logits'].cpu(), axis=1)[:,1].numpy()
+            pred = softmax(result['logits'].cpu(), axis=1)[:,1]
             
             ############
             outputs = zip(kinase_buffer, peptide_buffer, pred, tokens, embedding, attention)
